@@ -1,0 +1,16 @@
+[
+  {
+    "titulo": "Portfólio Pessoal",
+    "descricao": "O site que você está vendo agora. Comecei com uma versão simples em dark mode e fui refinando hierarquia visual, responsividade e microinterações até chegar num resultado com identidade própria — em vez de um template pronto.",
+    "tecnologias": ["HTML", "CSS", "JavaScript"],
+    "github": "https://github.com/joaomuassab-rgb/portfolio",
+    "demo": "https://joaomuassab-rgb.github.io/portfolio"
+  },
+  {
+    "titulo": "To-Do List Interativa",
+    "descricao": "Aplicação em JavaScript puro para praticar manipulação de DOM: adicionar e remover tarefas dinamicamente, sem frameworks — base pra entender o que ferramentas como React resolvem depois.",
+    "tecnologias": ["JavaScript"],
+    "github": "https://github.com/joaomuassab-rgb/portfolio",
+    "demo": "#"
+  }
+]

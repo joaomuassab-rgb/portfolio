@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>João Lucas Muassab | Desenvolvedor</title>
+
+  <meta name="description" content="Portfólio de João Lucas Muassab, estudante de Análise e Desenvolvimento de Sistemas em busca de estágio em desenvolvimento. Projetos em HTML, CSS e JavaScript.">
+
+  <!-- Open Graph: como o link aparece quando compartilhado no WhatsApp/LinkedIn -->
+  <meta property="og:title" content="João Lucas Muassab | Desenvolvedor">
+  <meta property="og:description" content="Estudante de ADS em busca de estágio em desenvolvimento. Veja meus projetos.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon: <JL/> em SVG, sem precisar de arquivo de imagem separado -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0b0d'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' font-weight='700' fill='%2300ff9c' text-anchor='middle'%3EJL%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#inicio" class="nav-brand">&lt;JoaoLucas/&gt;</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#skills">Skills</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section id="inicio" class="hero container">
+      <div class="hero-text reveal">
+        <p class="eyebrow">// estudante de ADS</p>
+        <h1>Olá, eu sou <span class="nome">João Lucas</span></h1>
+        <p class="hero-desc">
+          Cursando Análise e Desenvolvimento de Sistemas, construindo
+          interfaces modernas e organizadas com HTML, CSS e JavaScript —
+          em busca do meu primeiro estágio na área.
+        </p>
+
+        <div class="hero-botoes">
+          <a href="https://wa.me/5512996404758" class="botao" target="_blank" rel="noopener">
+            Entrar em contato
+          </a>
+          <a href="#projetos" class="botao secundario">
+            Ver projetos
+          </a>
+        </div>
+      </div>
+
+      <div class="terminal reveal" aria-hidden="true">
+        <div class="terminal-bar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="terminal-title">perfil.js</span>
+        </div>
+        <pre class="terminal-body"><code id="terminal-code"></code><span class="cursor">&#9608;</span></pre>
+      </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section id="sobre" class="container section">
+      <p class="eyebrow reveal">// sobre mim</p>
+      <div class="sobre-card reveal">
+        <p>
+          Estou cursando Análise e Desenvolvimento de Sistemas e comecei a
+          estudar desenvolvimento porque queria entender como transformar
+          uma ideia em algo que as pessoas realmente usam. Hoje pratico
+          HTML, CSS e JavaScript nos meus projetos, com atenção a organização
+          de código e boas práticas — este próprio portfólio é um exemplo
+          disso: comecei simples, testei, revisei e melhorei até chegar no
+          resultado que você está vendo agora.
+        </p>
+        <p class="sobre-cta">
+          Estou em busca do meu primeiro estágio em desenvolvimento — aberto
+          a front-end, back-end ou full stack — pra aprender na prática
+          dentro de um time.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="container section">
+      <p class="eyebrow reveal">// tecnologias que estou aprendendo</p>
+      <ul class="skills-grid">
+        <li class="skill-chip reveal">
+          <span class="skill-dot skill-dot-on"></span> HTML5
+        </li>
+        <li class="skill-chip reveal">
+          <span class="skill-dot skill-dot-on"></span> CSS3
+        </li>
+        <li class="skill-chip reveal">
+          <span class="skill-dot skill-dot-learning"></span> JavaScript
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== PROJETOS ===== -->
+    <section id="projetos" class="container section">
+      <p class="eyebrow reveal">// meus projetos</p>
+      <div id="lista-projetos"></div>
+    </section>
+
+    <!-- ===== CONTATO ===== -->
+    <section id="contato" class="container section contato">
+      <p class="eyebrow reveal">// vamos conversar</p>
+      <h2 class="reveal">Bora trocar uma ideia?</h2>
+      <p class="contato-desc reveal">
+        Estou disponível para estágio em desenvolvimento — front-end,
+        back-end ou full stack. Se seu time tem espaço pra alguém que
+        aprende rápido e cuida de cada detalhe, me chama.
+      </p>
+      <div class="contato-botoes">
+        <a href="https://wa.me/5512996404758" class="botao reveal" target="_blank" rel="noopener">
+          Chamar no WhatsApp
+        </a>
+        <a href="curriculo.pdf" class="botao secundario reveal" download>
+          Baixar currículo
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Feito por João Lucas Muassab</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
