@@ -1,16 +1,26 @@
 [
   {
-    "titulo": "Portfólio Pessoal",
-    "descricao": "O site que você está vendo agora. Comecei com uma versão simples em dark mode e fui refinando hierarquia visual, responsividade e microinterações até chegar num resultado com identidade própria — em vez de um template pronto.",
+    "titulo": "TechSaber+",
+    "descricao": "Plataforma educacional gamificada, pensada para tornar o aprendizado mais engajador através de mecânicas de jogo.",
     "tecnologias": ["HTML", "CSS", "JavaScript"],
-    "github": "https://github.com/joaomuassab-rgb/portfolio",
-    "demo": "https://joaomuassab-rgb.github.io/portfolio"
+    "imagem": "img/TechSaber+.jpeg",
+    "github": "https://github.com/joaomuassab-rgb/techsaber",
+    "demo": "#"
   },
   {
     "titulo": "To-Do List Interativa",
     "descricao": "Aplicação em JavaScript puro para praticar manipulação de DOM: adicionar e remover tarefas dinamicamente, sem frameworks — base pra entender o que ferramentas como React resolvem depois.",
     "tecnologias": ["JavaScript"],
-    "github": "https://github.com/joaomuassab-rgb/portfolio",
+    "imagem": "img/To-Do List Interativa.png",
+    "github": "https://github.com/joaomuassab-rgb/todolist",
     "demo": "#"
+  },
+  {
+    "titulo": "Portfólio Pessoal",
+    "descricao": "O site que você está vendo agora. Comecei com uma versão simples em dark mode e fui refinando hierarquia visual, responsividade e microinterações até chegar num resultado com identidade própria — em vez de um template pronto.",
+    "tecnologias": ["HTML", "CSS", "JavaScript"],
+    "imagem": "img/portfolio-print.jpg",
+    "github": "https://github.com/joaomuassab-rgb/portfolio",
+    "demo": "https://joaomuassab-rgb.github.io/portfolio"
   }
 ]

@@ -46,10 +46,11 @@ function renderProjetos() {
     })
     .then((projetos) => {
       container.innerHTML = "";
+      container.className = "projetos-accordion";
 
       projetos.forEach((p) => {
         const card = document.createElement("div");
-        card.className = "projeto-card reveal";
+        card.className = "accordion-card reveal";
 
         const tags = (p.tecnologias || [])
           .map((t) => `<span class="tag">${t}</span>`)
@@ -64,17 +65,25 @@ function renderProjetos() {
             ? `<a class="btn" href="${p.demo}" target="_blank" rel="noopener">Demo</a>`
             : "";
 
+        const imagemHtml = p.imagem
+          ? `<img src="${p.imagem}" alt="Captura de tela do projeto ${p.titulo}">`
+          : "";
+
         card.innerHTML = `
-          <h3>${p.titulo}</h3>
-          <p>${p.descricao}</p>
-          <div class="tag-list">${tags}</div>
-          <div class="botoes">${linkGithub}${linkDemo}</div>
+          <div class="accordion-bg">${imagemHtml}</div>
+          <div class="accordion-overlay"></div>
+          <span class="accordion-titulo-vertical">${p.titulo}</span>
+          <div class="accordion-conteudo">
+            <h3>${p.titulo}</h3>
+            <p>${p.descricao}</p>
+            <div class="tag-list">${tags}</div>
+            <div class="botoes">${linkGithub}${linkDemo}</div>
+          </div>
         `;
 
         container.appendChild(card);
       });
 
-      // observa os cards recém-criados para o scroll reveal
       ativarScrollReveal();
     })
     .catch((err) => {

@@ -339,38 +339,6 @@ button:focus-visible {
 /* =========================================================
    PROJETOS
 ========================================================= */
-#lista-projetos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.projeto-card {
-  background: linear-gradient(180deg, var(--bg-elevated), var(--bg-elevated-2));
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 26px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.projeto-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--border-hover);
-  box-shadow: 0 16px 34px rgba(0, 255, 156, 0.14);
-}
-
-.projeto-card h3 {
-  font-family: var(--font-mono);
-  margin: 0 0 10px 0;
-  font-size: 18px;
-}
-
-.projeto-card p {
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.6;
-  margin: 0 0 16px 0;
-}
 
 .tag-list {
   display: flex;
@@ -534,9 +502,21 @@ button:focus-visible {
   }
 
   .section { padding: 120px 48px; }
-  .sobre-card p { font-size: 19px; max-width: 760px; }
+  .sobre-card p { font-size: 19px; max-width: 900px; }
   .eyebrow { font-size: 16px; }
   .skill-chip { font-size: 16px; padding: 13px 22px; }
+  .sobre-grid {
+    grid-template-columns: 340px 1fr;
+    gap: 48px;
+  }
+
+  .sobre-foto img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .sobre-cta {
+    font-size: 17px !important;
+  }
 }
 
 /* Celular em pé continua compacto — não aplica os aumentos acima */
@@ -552,4 +532,168 @@ button:focus-visible {
   .reveal { opacity: 1; transform: none; transition: none; }
   .cursor, .skill-dot-learning { animation: none; }
   .projeto-card:hover, .skill-chip:hover { transform: none; }
+}
+
+/* =========================================================
+   SOBRE MIM COM FOTO
+========================================================= */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.sobre-foto img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 640px) {
+  .sobre-grid {
+    grid-template-columns: 1fr;
+  }
+  .sobre-foto img {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
+/* =========================================================
+   PROJETOS — ACCORDION HORIZONTAL (estilo hover-expand)
+========================================================= */
+.projetos-accordion {
+  display: flex;
+  gap: 10px;
+  height: 420px;
+  overflow: hidden;
+}
+
+.accordion-card {
+  position: relative;
+  flex: 1;
+  min-width: 60px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.accordion-card:hover,
+.accordion-card:focus-within {
+  flex: 5;
+}
+
+.accordion-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.accordion-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.4) brightness(0.5);
+  transition: filter 0.5s ease, transform 0.6s ease;
+}
+
+.accordion-card:hover .accordion-bg img {
+  filter: saturate(1) brightness(0.85);
+  transform: scale(1.05);
+}
+
+.accordion-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(10, 11, 13, 0.95) 0%,
+    rgba(10, 11, 13, 0.5) 50%,
+    rgba(10, 11, 13, 0.2) 100%
+  );
+}
+
+.accordion-titulo-vertical {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  transition: opacity 0.3s ease;
+}
+
+.accordion-card:hover .accordion-titulo-vertical {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.accordion-conteudo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 26px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease 0.15s, transform 0.35s ease 0.15s;
+}
+
+.accordion-card:hover .accordion-conteudo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.accordion-conteudo h3 {
+  font-family: var(--font-mono);
+  color: var(--text);
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.accordion-conteudo p {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0 0 14px 0;
+  max-width: 340px;
+}
+
+/* Mobile: empilha em vez de accordion horizontal, senão fica ilegível */
+@media (max-width: 760px) {
+  .projetos-accordion {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .accordion-card {
+    flex: none !important;
+    height: 220px;
+  }
+
+  .accordion-titulo-vertical {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  .accordion-conteudo {
+    opacity: 1;
+    transform: none;
+    background: linear-gradient(to top, rgba(10,11,13,0.95), transparent);
+  }
+
+  .accordion-card .accordion-titulo-vertical {
+    opacity: 0;
+  }
 }
